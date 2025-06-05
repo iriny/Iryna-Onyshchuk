@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 
-public class UserTest extends BaseConfig {
+public class UserTest extends BaseApiTest {
 
     Faker faker = new Faker();
 

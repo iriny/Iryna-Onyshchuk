@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.open;
 
-public class MonefyTest extends BaseTest {
+public class MonefyTest extends BaseAndroidTest {
 
     @BeforeEach
     void confirmGetStarted() {

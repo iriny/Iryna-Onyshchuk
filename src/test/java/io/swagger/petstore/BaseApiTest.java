@@ -3,7 +3,7 @@ package io.swagger.petstore;
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.BeforeAll;
 
-public class BaseConfig {
+public class BaseApiTest {
 
     @BeforeAll
     static void setBaseUri() {
@@ -12,7 +12,7 @@ public class BaseConfig {
 
     protected <T> T request(Class<T> tClass) {
         try {
-            return tClass.newInstance();
+            return tClass.getDeclaredConstructor().newInstance();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
