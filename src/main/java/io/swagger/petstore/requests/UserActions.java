@@ -2,8 +2,6 @@ package io.swagger.petstore.requests;
 
 
 import io.qameta.allure.Step;
-import io.restassured.filter.log.RequestLoggingFilter;
-import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.swagger.petstore.models.User;
@@ -17,8 +15,6 @@ public class UserActions {
     @Step("Create new user")
     public Response create(User user) {
         return given().contentType(ContentType.JSON)
-                .filters(new RequestLoggingFilter(),
-                        new ResponseLoggingFilter())
                 .body(user)
                 .when()
                 .post(BASE_USER_PATH)
@@ -31,8 +27,6 @@ public class UserActions {
     @Step("Edit user {username}")
     public Response edit(String username, User user) {
         return given().contentType(ContentType.JSON)
-                .filters(new RequestLoggingFilter(),
-                        new ResponseLoggingFilter())
                 .body(user)
                 .when()
                 .put(BASE_USER_PATH + username)
@@ -45,8 +39,6 @@ public class UserActions {
     @Step("Get user {username}")
     public Response getUser(String username) {
         return given().contentType(ContentType.JSON)
-                .filters(new RequestLoggingFilter(),
-                        new ResponseLoggingFilter())
                 .when()
                 .get(BASE_USER_PATH + username)
                 .then()
@@ -58,8 +50,6 @@ public class UserActions {
     @Step("Delete user {username}")
     public Response delete(String username) {
         return given().contentType(ContentType.JSON)
-                .filters(new RequestLoggingFilter(),
-                        new ResponseLoggingFilter())
                 .when()
                 .delete(BASE_USER_PATH + username)
                 .then()
