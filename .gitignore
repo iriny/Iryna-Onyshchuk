@@ -1,0 +1,7 @@
+.allure
+.allure-results
+.idea
+*.iml
+target
+build
+.DS_Store
