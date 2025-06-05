@@ -3,12 +3,14 @@ package com.monefy;
 import com.codeborne.selenide.WebDriverRunner;
 import org.junit.jupiter.api.AfterEach;
 
+import java.io.IOException;
+
 import static utils.AttachmentsHelper.screenshot;
 
 public class BaseTest {
 
     @AfterEach
-    public void closeWebDriver() {
+    public void closeWebDriver() throws IOException {
         screenshot();
         WebDriverRunner.closeWebDriver();
     }
